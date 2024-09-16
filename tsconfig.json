@@ -1,9 +1,13 @@
 {
-    "extends": "assemblyscript/std/assembly.json",
-    "include": [
-        "./**/*.ts",
-        "./*.ts",
-        "./runtime/**/*.ts",
-        "./runtime/*.ts",
-    ]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": false,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true
+  },
+  "include": ["runtime/**/*.ts"]
 }
