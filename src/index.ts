@@ -2,7 +2,9 @@ import asc from 'assemblyscript/dist/asc.js';
 
 import runtime from './runtime';
 
-const buildWasm = (includeFiles: { [key: string]: string }): Promise<string | Uint8Array> => {
+const buildContractWasm = (includeFiles: {
+    [key: string]: string;
+}): Promise<string | Uint8Array> => {
     return new Promise(async (resolve, reject) => {
         const asOptions = [
             '--target',
@@ -96,4 +98,4 @@ const buildWasm = (includeFiles: { [key: string]: string }): Promise<string | Ui
 };
 
 export * as templates from './templates';
-export { buildWasm };
+export { buildContractWasm };

@@ -1,9 +1,9 @@
-import { buildWasm, templates } from '../src/index';
+import { buildContractWasm, templates } from '../src/index';
 import fs from 'fs';
 
 const build = async () => {
     console.log('[OPNET_BUNDLER] building...');
-    const contents = await buildWasm(
+    const contents = await buildContractWasm(
         templates.op20_build({
             tokenName: 'ABrandNewShitCoin',
             tokenSymbol: 'SHIT',

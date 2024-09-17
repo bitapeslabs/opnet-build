@@ -2,10 +2,9 @@
     "name": "@bitapes/opnet-build",
     "version": "1.0.0",
     "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
-    "private": true,
     "main": "dist/index.js",
     "module": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/types/index.d.ts",
     "scripts": {
         "test": "jest",
         "build": "rollup -c",
