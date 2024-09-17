@@ -1,6 +1,6 @@
 {
     "name": "@bitapes/opnet-build",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -30,6 +30,8 @@
         "url": "https://github.com/BlobMaster41/btc-runtime.git"
     },
     "files": [
+        "dist",
+        "dist/types/*.ts",
         "package.json",
         "runtime",
         "runtime/*.ts",
