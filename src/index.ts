@@ -1,6 +1,6 @@
 import asc from 'assemblyscript/dist/asc.js';
 
-import runtime from './src/runtime';
+import runtime from './runtime';
 
 const buildWasm = (includeFiles: { [key: string]: string }): Promise<string | Uint8Array> => {
     return new Promise(async (resolve, reject) => {
@@ -95,5 +95,5 @@ const buildWasm = (includeFiles: { [key: string]: string }): Promise<string | Ui
     });
 };
 
-export * as templates from './src/templates.ts';
+export * as templates from './templates';
 export { buildWasm };

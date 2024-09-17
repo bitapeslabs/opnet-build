@@ -1,4 +1,4 @@
-interface OP20BuildConfig {
+export interface OP20BuildConfig {
     tokenName: string;
     tokenSymbol: string;
     tokenDecimals: number;

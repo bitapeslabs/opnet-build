@@ -1,4 +1,4 @@
-import { buildWasm, templates } from '../index';
+import { buildWasm, templates } from '../src/index';
 import fs from 'fs';
 
 const build = async () => {
