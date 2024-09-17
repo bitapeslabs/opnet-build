@@ -1,0 +1,6 @@
+{
+  "packages": [
+    "as-bignum/assembly",
+    "@btc-vision/btc-runtime/runtime"
+  ]
+}

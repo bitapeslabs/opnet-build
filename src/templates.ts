@@ -1,10 +1,31 @@
-export const op20_build = (
-    tokenName: string,
-    tokenSymbol: string,
-    tokenDecimals: number,
-    tokenMaxSupply: string,
-) =>
-    `
+interface OP20BuildConfig {
+    tokenName: string;
+    tokenSymbol: string;
+    tokenDecimals: number;
+    tokenMaxSupply: string;
+}
+
+const op20_build = ({
+    tokenName,
+    tokenSymbol,
+    tokenDecimals,
+    tokenMaxSupply,
+}: OP20BuildConfig) => ({
+    [`./contracts/${tokenName}.ts`]: `
+import { u128, u256 } from 'as-bignum/assembly';
+import {
+    Address,
+    Blockchain,
+    BytesWriter,
+    Calldata,
+    encodeSelector,
+    Map,
+    OP20InitParameters,
+    OP_20,
+    Selector,
+} from '@btc-vision/btc-runtime/runtime';
+import { DeployableOP_20 } from '@btc-vision/btc-runtime/runtime/contracts/DeployableOP_20';
+
 @final
 export class ${tokenName} extends OP_20 {
     constructor() {
@@ -49,6 +70,11 @@ export class ${tokenName} extends OP_20 {
         return writer;
     }
 }
+`,
+    './index.ts': `
+import { ABIRegistry, Blockchain } from '@btc-vision/btc-runtime/runtime';
+import { ${tokenName} } from './contracts/${tokenName}';
+
 export function defineSelectors(): void {
   /** OP_NET */
   ABIRegistry.defineGetterSelector('address', false);
@@ -68,7 +94,7 @@ export function defineSelectors(): void {
   ABIRegistry.defineGetterSelector('name', false);
   ABIRegistry.defineGetterSelector('symbol', false);
   ABIRegistry.defineGetterSelector('totalSupply', false);
-  ABIRegistry.defineGetterSelector('maxSupply', false);
+  ABIRegistry.defineGetterSelector('maximumSupply', false);
 
   /** Optional */
   ABIRegistry.defineMethodSelector('airdrop', true);
@@ -85,4 +111,9 @@ Blockchain.contract = () => {
   // DO NOT ADD CUSTOM LOGIC HERE.
 
   return contract;
-}`;
+}
+  
+export * from '@btc-vision/btc-runtime/runtime/exports';
+`,
+});
+export { op20_build };

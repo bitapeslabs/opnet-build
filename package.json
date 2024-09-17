@@ -1,12 +1,13 @@
 {
-    "name": "@btc-vision/btc-runtime",
+    "name": "bitapes-opnet-bundler",
     "version": "1.1.5",
-    "description": "Bitcoin Smart Contract Runtime",
+    "description": "A bundler for opnet runtime for creating a virtual filesystem to run asc in the browser",
     "main": "btc/index.ts",
     "types": "btc/index.ts",
     "scripts": {
         "test": "jest",
-        "build": "rollup -c"
+        "build": "rollup -c",
+        "opbuild": "tsx ./tests/buildOp20.ts"
     },
     "type": "module",
     "keywords": [
@@ -18,19 +19,11 @@
         "OP_NET"
     ],
     "homepage": "https://opnet.org",
-    "author": "BlobMaster41",
+    "author": "Bitapes LLC",
     "license": "LICENSE.MD",
     "devDependencies": {
-        "@rollup/plugin-babel": "^6.0.4",
-        "@rollup/plugin-commonjs": "^26.0.1",
-        "@rollup/plugin-json": "^6.1.0",
-        "@rollup/plugin-node-resolve": "^15.2.3",
-        "@rollup/plugin-typescript": "^11.1.6",
-        "@types/node": "^20.11.30",
         "assemblyscript": "^0.27.25",
-        "prettier": "^3.2.5",
-        "rollup": "^2.79.1",
-        "rollup-plugin-terser": "^7.0.2"
+        "prettier": "^3.2.5"
     },
     "repository": {
         "type": "git",
@@ -46,6 +39,7 @@
     ],
     "dependencies": {
         "@assemblyscript/loader": "^0.27.29",
+        "@btc-vision/btc-runtime": "^1.1.6",
         "as-bignum": "^0.3.0",
         "gulplog": "^2.2.0",
         "ts-node": "^10.9.2"
