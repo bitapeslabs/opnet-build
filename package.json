@@ -1,6 +1,6 @@
 {
     "name": "@bitapes/opnet-build",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
     "main": "dist/index.js",
     "module": "dist/index.js",
