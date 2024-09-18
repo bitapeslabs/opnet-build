@@ -1,3 +1,5 @@
+//import asc from 'assemblyscript/dist/asc.js';
+
 import asc from 'assemblyscript/dist/asc.js';
 
 import runtime from './runtime';
@@ -67,11 +69,7 @@ const buildContractWasm = (includeFiles: {
             return source;
         };
 
-        const writeFile = async (
-            filename: string,
-            contents: Uint8Array | string,
-            baseDir: string,
-        ) => {
+        const writeFile = async (filename: string, contents: Uint8Array | string) => {
             if (filename.endsWith('wasm')) {
                 resolve(contents);
             }
