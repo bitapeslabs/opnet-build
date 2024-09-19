@@ -1,6 +1,6 @@
 {
     "name": "@bitapes/opnet-build",
-    "version": "1.0.7",
+    "version": "1.2.3",
     "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -23,7 +23,8 @@
     "license": "LICENSE.MD",
     "devDependencies": {
         "assemblyscript": "^0.27.29",
-        "prettier": "^3.2.5"
+        "prettier": "^3.2.5",
+        "rollup-plugin-polyfill-node": "^0.13.0"
     },
     "repository": {
         "type": "git",
@@ -50,6 +51,7 @@
         "as-bignum": "^0.3.0",
         "gulplog": "^2.2.0",
         "rollup": "^4.21.3",
+        "rollup-plugin-tla": "^0.0.2",
         "rollup-plugin-typescript2": "^0.36.0",
         "ts-node": "^10.9.2",
         "url": "^0.11.4"

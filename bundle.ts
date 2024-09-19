@@ -20,9 +20,7 @@ const start = async () => {
                 if (fs.lstatSync(path).isDirectory()) {
                     readFiles(path);
                 } else {
-                    bundle['./' + path] = Buffer.from(fs.readFileSync(path, 'utf-8')).toString(
-                        'base64',
-                    );
+                    bundle[path] = Buffer.from(fs.readFileSync(path, 'utf-8')).toString('base64');
                 }
             }
         };

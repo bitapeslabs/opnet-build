@@ -5,13 +5,15 @@ export interface OP20BuildConfig {
     tokenMaxSupply: string;
 }
 
+export type templateName = 'op20_build';
+
 const op20_build = ({
     tokenName,
     tokenSymbol,
     tokenDecimals,
     tokenMaxSupply,
 }: OP20BuildConfig) => ({
-    [`./contracts/${tokenName}.ts`]: `
+    [`contracts/${tokenName}.ts`]: `
 import { u128, u256 } from 'as-bignum/assembly';
 import {
     Address,
@@ -71,7 +73,7 @@ export class ${tokenName} extends OP_20 {
     }
 }
 `,
-    './index.ts': `
+    'index.ts': `
 import { ABIRegistry, Blockchain } from '@btc-vision/btc-runtime/runtime';
 import { ${tokenName} } from './contracts/${tokenName}';
 

@@ -1,4 +1,5 @@
 import { buildContractWasm, templates } from '../src/index';
+import asc from 'assemblyscript/dist/asc.js';
 import fs from 'fs';
 
 const build = async () => {
@@ -10,6 +11,7 @@ const build = async () => {
             tokenDecimals: 1,
             tokenMaxSupply: '1000000',
         }),
+        asc,
     );
     const wasmFilePath = './build/build.wasm';
 

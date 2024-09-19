@@ -1,12 +1,12 @@
 //import asc from 'assemblyscript/dist/asc.js';
-
-import asc from 'assemblyscript/dist/asc.js';
-
 import runtime from './runtime';
-
-const buildContractWasm = (includeFiles: {
-    [key: string]: string;
-}): Promise<string | Uint8Array> => {
+import { resolveDuplicatedPath } from './utils';
+const buildContractWasm = (
+    includeFiles: {
+        [key: string]: string;
+    },
+    asc: any,
+): Promise<Uint8Array> => {
     return new Promise(async (resolve, reject) => {
         const asOptions = [
             '--target',
@@ -57,40 +57,43 @@ const buildContractWasm = (includeFiles: {
                 return acc;
             }, {}),
             ...includeFiles,
-            './asconfig.json': asConfig,
+            'asconfig.json': asConfig,
         };
 
-        const readFile = async (fileName, baseDir) => {
-            baseDir = baseDir.split('\\').join('/');
-            fileName = fileName.split('\\').join('/');
-
-            const source = bundle[baseDir + '/' + fileName];
-
-            return source;
+        const readFile = async (filename: string, _) => {
+            let potentialDuplicate = resolveDuplicatedPath(filename);
+            return (
+                //File is ppresent as is
+                bundle[filename] ??
+                //File is present if you remove weird duplicates added by compiler
+                bundle[potentialDuplicate] ??
+                //File is present in the original filename if you remove the "/" from node_modules
+                bundle[filename.slice(1)] ??
+                //File is present in the dupfix if you remove the "/ from node modules"
+                bundle[potentialDuplicate.slice(1)] ??
+                //File is not present lol (we tried)
+                null
+            );
         };
 
         const writeFile = async (filename: string, contents: Uint8Array | string) => {
             if (filename.endsWith('wasm')) {
-                resolve(contents);
+                resolve(contents as Uint8Array);
             }
             return;
         };
 
+        //Not even used by the compiler
+        const listFiles = async (dirname, baseDir) => [];
+
         const { error, stderr, stdout, stats } = await asc.main(['index.ts', ...asOptions], {
             readFile,
             writeFile,
+            listFiles,
         });
 
-        if (error) {
-            console.log(error.stack);
-
-            for (const warning of stderr as any) {
-                try {
-                    console.log(warning.toString());
-                } catch (e) {}
-            }
-
-            reject(error.toString());
+        if (error || stderr) {
+            reject({ error, stderr });
         }
     });
 };
