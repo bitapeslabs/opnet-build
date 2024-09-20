@@ -1,15 +1,20 @@
 import fs from 'fs';
 import path from 'path';
 
+interface IPackage {
+    path: string;
+    resolveTo: string;
+}
+
 const start = async () => {
-    const { packages }: { packages: string[] } = JSON.parse(
+    const { packages }: { packages: IPackage[] } = JSON.parse(
         fs.readFileSync('bdconfig.json', 'utf-8'),
     );
 
     let bundle = {};
 
     for (let packageRoot of packages) {
-        const rootFolder = 'node_modules/' + packageRoot;
+        const { path: rootFolder, resolveTo } = packageRoot;
 
         //recursively read all files in the root folder and save their path to bundle object
 
@@ -20,7 +25,10 @@ const start = async () => {
                 if (fs.lstatSync(path).isDirectory()) {
                     readFiles(path);
                 } else {
-                    bundle[path] = Buffer.from(fs.readFileSync(path, 'utf-8')).toString('base64');
+                    const finalPath = path.replace(rootFolder, resolveTo);
+                    bundle[finalPath] = Buffer.from(fs.readFileSync(path, 'utf-8')).toString(
+                        'base64',
+                    );
                 }
             }
         };
