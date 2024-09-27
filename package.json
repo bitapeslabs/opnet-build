@@ -1,65 +1,65 @@
 {
-    "name": "@bitapes/opnet-build",
-    "version": "1.2.9",
-    "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
-    "main": "dist/runtime-bundle/index.js",
-    "module": "dist/runtime-bundle/index.js",
-    "types": "dist/runtime-bundle/types/index.d.ts",
-    "scripts": {
-        "test": "jest",
-        "build:runtime": "npm i @btc-vision/btc-runtime && tsx scripts/createRuntimeBundle.ts && rollup -c rollup.config.runtime.js",
-        "build:worker": "rollup -c rollup.config.worker.js  && uglifyjs dist/webworker-bundle/opnetBuilder.js -o dist/webworker-bundle/opnetBuilder.js && javascript-obfuscator dist/webworker-bundle/opnetBuilder.js --output dist/webworker-bundle/opnetBuilder.js",
-        "build": "npm run build:runtime && npm run build:worker",
-        "buildbot": "npm run build && tsx scripts/publishOnChange.ts",
-        "opbuild": "tsx ./tests/buildOp20.ts"
-    },
-    "type": "module",
-    "keywords": [
-        "bitcoin",
-        "smart",
-        "contract",
-        "runtime",
-        "opnet",
-        "OP_NET"
-    ],
-    "author": "Bitapes LLC",
-    "license": "LICENSE.MD",
-    "devDependencies": {
-        "assemblyscript": "^0.27.29",
-        "prettier": "^3.2.5",
-        "rollup-plugin-polyfill-node": "^0.13.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/BlobMaster41/btc-runtime.git"
-    },
-    "files": [
-        "dist",
-        "dist/types/*.ts",
-        "package.json",
-        "runtime",
-        "runtime/*.ts",
-        "runtime/**/*.ts",
-        "!**/*.js.map",
-        "!**/*.tsbuildinfo"
-    ],
-    "dependencies": {
-        "@assemblyscript/loader": "^0.27.29",
-        "@btc-vision/btc-runtime": "^1.1.9",
-        "@rollup/plugin-alias": "^5.1.0",
-        "@rollup/plugin-babel": "^6.0.4",
-        "@rollup/plugin-commonjs": "^26.0.1",
-        "@rollup/plugin-node-resolve": "^15.2.3",
-        "@rollup/plugin-replace": "^5.0.7",
-        "as-bignum": "^0.3.0",
-        "dotenv": "^16.4.5",
-        "gulplog": "^2.2.0",
-        "javascript-obfuscator": "^4.1.1",
-        "rollup": "^4.21.3",
-        "rollup-plugin-tla": "^0.0.2",
-        "rollup-plugin-typescript2": "^0.36.0",
-        "ts-node": "^10.9.2",
-        "uglifyjs": "^2.4.11",
-        "url": "^0.11.4"
-    }
+  "name": "@bitapes/opnet-build",
+  "version": "1.2.10",
+  "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
+  "main": "dist/runtime-bundle/index.js",
+  "module": "dist/runtime-bundle/index.js",
+  "types": "dist/runtime-bundle/types/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build:runtime": "npm i @btc-vision/btc-runtime && tsx scripts/createRuntimeBundle.ts && rollup -c rollup.config.runtime.js",
+    "build:worker": "rollup -c rollup.config.worker.js  && uglifyjs dist/webworker-bundle/opnetBuilder.js -o dist/webworker-bundle/opnetBuilder.js && javascript-obfuscator dist/webworker-bundle/opnetBuilder.js --output dist/webworker-bundle/opnetBuilder.js",
+    "build": "npm run build:runtime && npm run build:worker",
+    "buildbot": "npm run build && tsx scripts/publishOnChange.ts",
+    "opbuild": "tsx ./tests/buildOp20.ts"
+  },
+  "type": "module",
+  "keywords": [
+    "bitcoin",
+    "smart",
+    "contract",
+    "runtime",
+    "opnet",
+    "OP_NET"
+  ],
+  "author": "Bitapes LLC",
+  "license": "LICENSE.MD",
+  "devDependencies": {
+    "assemblyscript": "^0.27.29",
+    "prettier": "^3.2.5",
+    "rollup-plugin-polyfill-node": "^0.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlobMaster41/btc-runtime.git"
+  },
+  "files": [
+    "dist",
+    "dist/types/*.ts",
+    "package.json",
+    "runtime",
+    "runtime/*.ts",
+    "runtime/**/*.ts",
+    "!**/*.js.map",
+    "!**/*.tsbuildinfo"
+  ],
+  "dependencies": {
+    "@assemblyscript/loader": "^0.27.29",
+    "@btc-vision/btc-runtime": "^1.1.9",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
+    "as-bignum": "^0.3.0",
+    "dotenv": "^16.4.5",
+    "gulplog": "^2.2.0",
+    "javascript-obfuscator": "^4.1.1",
+    "rollup": "^4.21.3",
+    "rollup-plugin-tla": "^0.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-node": "^10.9.2",
+    "uglifyjs": "^2.4.11",
+    "url": "^0.11.4"
+  }
 }
