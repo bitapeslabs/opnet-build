@@ -54,7 +54,7 @@ const start = async () => {
     execSync('npm publish --access restricted', execOptions);
     execSync('git add .', execOptions);
     execSync(
-        'git commit -m "(bot) automated build - update to @btc-vision/transaction^' +
+        'git commit -m "(bot) automated build - update to @btc-vision/btc-runtime^' +
             versions['@btc-vision/btc-runtime'] +
             '"',
         execOptions,
