@@ -1,4 +1,4 @@
-import { buildContractWasm, templates } from '../src/index';
+import { buildContractWasm, templates } from '../src/runtime-bundle/index';
 import asc from 'assemblyscript/dist/asc.js';
 import fs from 'fs';
 

@@ -1,0 +1,12 @@
+{
+    "packages": [
+        {
+            "path": "node_modules/as-bignum/assembly",
+            "resolveTo": "node_modules/as-bignum/assembly"
+        },
+        {
+            "path": "node_modules/@btc-vision/btc-runtime/runtime",
+            "resolveTo": "node_modules/@btc-vision/btc-runtime/runtime"
+        }
+    ]
+}
