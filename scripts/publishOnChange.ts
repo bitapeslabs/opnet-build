@@ -55,7 +55,7 @@ const start = async () => {
     execSync('git add *', execOptions);
     execSync(
         'git commit -m "(bot) automated build - update to @btc-vision/transaction^' +
-            versions['@btc-vision/btc-vision'] +
+            versions['@btc-vision/btc-runtime'] +
             '"',
         execOptions,
     );
