@@ -45,8 +45,8 @@ export class ${tokenName} extends OP_20 {
 
         }
 
-        this.instantiate(new OP20InitParameters(maxSupply, decimals, name, symbol));
-        this._mint(Blockchain.origin, maxSupply);
+        this.instantiate(new OP20InitParameters(this.maxSupply, this.decimals, this.name, this.symbol));
+        this._mint(Blockchain.txOrigin, this.maxSupply);
     }
 
     public override callMethod(method: Selector, calldata: Calldata): BytesWriter {
