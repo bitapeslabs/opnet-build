@@ -24,9 +24,9 @@ onmessage = async function (params: MessageEvent<IParams>) {
 
             let binary = await buildContractWasm(templates[templateName](templateData), asc);
 
-            postMessage({ status: 'success', binary });
+            return postMessage({ status: 'success', binary });
         } catch (error) {
-            postMessage({ status: 'error', error: error.message || JSON.stringify(error) });
+            return postMessage({ status: 'error', error: error.message || JSON.stringify(error) });
         }
     }
 };
