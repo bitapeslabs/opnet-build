@@ -52,6 +52,10 @@ const start = async () => {
     };
 
     execSync('npm publish --access restricted', execOptions);
+    fs.writeFileSync(
+        path.join(__dirname, '../configs/versions.config.json'),
+        JSON.stringify(versions, null, 2),
+    );
     execSync('git add .', execOptions);
     execSync(
         'git commit -m "(bot) automated build - update to @btc-vision/btc-runtime^' +
@@ -61,11 +65,6 @@ const start = async () => {
     );
 
     execSync('git push -f origin main', execOptions);
-
-    fs.writeFileSync(
-        path.join(__dirname, '../configs/versions.config.json'),
-        JSON.stringify(versions, null, 2),
-    );
 
     console.log('(publisher) Packges published and pushed to git');
     console.log('(publisher) New version: ' + currentPackageJson.version);
