@@ -1,4 +1,11 @@
 declare const _default: {
+    "node_modules/as-bignum/assembly/__tests__/as-pect.d.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/i128.spec.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/safe_u128.spec.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/safe_u256.spec.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/u128.spec.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/u256.spec.ts": string;
+    "node_modules/as-bignum/assembly/__tests__/utils.ts": string;
     "node_modules/as-bignum/assembly/fixed/fp128.ts": string;
     "node_modules/as-bignum/assembly/fixed/fp256.ts": string;
     "node_modules/as-bignum/assembly/fixed/index.ts": string;
@@ -21,20 +28,13 @@ declare const _default: {
     "node_modules/as-bignum/assembly/integer/u256.ts": string;
     "node_modules/as-bignum/assembly/tsconfig.json": string;
     "node_modules/as-bignum/assembly/utils.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/as-pect.d.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/i128.spec.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/safe_u128.spec.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/safe_u256.spec.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/u128.spec.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/u256.spec.ts": string;
-    "node_modules/as-bignum/assembly/__tests__/utils.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/buffer/BytesReader.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/buffer/BytesWriter.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/contracts/DeployableOP_20.ts": string;
-    "node_modules/@btc-vision/btc-runtime/runtime/contracts/interfaces/IOP_20.ts": string;
-    "node_modules/@btc-vision/btc-runtime/runtime/contracts/interfaces/OP20InitParameters.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/contracts/OP_20.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/contracts/OP_NET.ts": string;
+    "node_modules/@btc-vision/btc-runtime/runtime/contracts/interfaces/IOP_20.ts": string;
+    "node_modules/@btc-vision/btc-runtime/runtime/contracts/interfaces/OP20InitParameters.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/env/BTCEnvironment.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/env/global.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/env/index.ts": string;
@@ -42,11 +42,11 @@ declare const _default: {
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/ApproveEvent.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/BurnEvent.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/ClaimEvent.ts": string;
-    "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/index.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/MintEvent.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/StakeEvent.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/TransferEvent.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/UnstakeEvent.ts": string;
+    "node_modules/@btc-vision/btc-runtime/runtime/events/predefined/index.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/exports/index.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/generic/Map.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/generic/MapU256.ts": string;
@@ -71,9 +71,9 @@ declare const _default: {
     "node_modules/@btc-vision/btc-runtime/runtime/storage/StoredString.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/storage/StoredU256.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/types/Address.ts": string;
-    "node_modules/@btc-vision/btc-runtime/runtime/types/index.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/types/Revert.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/types/SafeMath.ts": string;
+    "node_modules/@btc-vision/btc-runtime/runtime/types/index.ts": string;
     "node_modules/@btc-vision/btc-runtime/runtime/universal/ABIRegistry.ts": string;
 };
 export default _default;
