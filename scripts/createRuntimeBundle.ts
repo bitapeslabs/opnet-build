@@ -39,7 +39,7 @@ const start = async () => {
     }
 
     fs.writeFileSync(
-        path.join(__dirname, '../src/bundler.config.json'),
+        path.join(__dirname, '../src/runtime-bundle/runtime.ts'),
         'export default ' + JSON.stringify(bundle, null, 2),
     );
 
