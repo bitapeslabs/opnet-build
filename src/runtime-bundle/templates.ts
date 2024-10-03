@@ -45,7 +45,6 @@ export class ${tokenName} extends OP_20 {
 
         }
 
-        this.instantiate(new OP20InitParameters(this.maxSupply, this.decimals, this.name, this.symbol));
         this._mint(Blockchain.txOrigin, this.maxSupply);
     }
 
