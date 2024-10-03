@@ -80,19 +80,19 @@ import { ${tokenName} } from './contracts/${tokenName}';
 
 export function defineSelectors(): void {
     /** OP_NET */
-    ABIRegistry.defineMethodSelector('isAddressOwner', false);
+    ABIRegistry.defineMethodSelector('isAddressOwner');
 
     /** OP_20 */
-    ABIRegistry.defineMethodSelector('allowance', false);
-    ABIRegistry.defineMethodSelector('approve', true);
-    ABIRegistry.defineMethodSelector('balanceOf', false);
-    ABIRegistry.defineMethodSelector('burn', true);
-    ABIRegistry.defineMethodSelector('mint', true);
-    ABIRegistry.defineMethodSelector('transfer', true);
-    ABIRegistry.defineMethodSelector('transferFrom', true);
+    ABIRegistry.defineMethodSelector('allowance');
+    ABIRegistry.defineMethodSelector('approve');
+    ABIRegistry.defineMethodSelector('balanceOf');
+    ABIRegistry.defineMethodSelector('burn');
+    ABIRegistry.defineMethodSelector('mint');
+    ABIRegistry.defineMethodSelector('transfer');
+    ABIRegistry.defineMethodSelector('transferFrom');
 
     /** Optional */
-    ABIRegistry.defineMethodSelector('airdrop', true);
+    ABIRegistry.defineMethodSelector('airdrop');
 
     // Define your selectors here.
 }
