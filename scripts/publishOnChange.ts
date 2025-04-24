@@ -1,10 +1,8 @@
 import 'dotenv/config';
 
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 import { execSync, ExecSyncOptions } from 'child_process';
-
-const __dirname = import.meta.dirname;
 
 let versions = JSON.parse(
     fs.readFileSync(path.join(__dirname, '../configs/versions.config.json'), 'utf-8'),
@@ -51,7 +49,7 @@ const start = async () => {
         stdio: 'inherit',
     };
 
-    execSync('npm publish --access restricted', execOptions);
+    execSync('npm publish', execOptions);
     fs.writeFileSync(
         path.join(__dirname, '../configs/versions.config.json'),
         JSON.stringify(versions, null, 2),

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist/runtime-bundle",
+        "emitDeclarationOnly": true,
+        "module": "esnext",
+        "target": "es2022",
+        "moduleResolution": "nodenext",
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/runtime-bundle"]
+}

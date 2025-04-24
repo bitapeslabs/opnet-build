@@ -1,12 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 
 interface IPackage {
     path: string;
     resolveTo: string;
 }
-
-const __dirname = import.meta.dirname;
 
 const start = async () => {
     const { packages }: { packages: IPackage[] } = JSON.parse(
