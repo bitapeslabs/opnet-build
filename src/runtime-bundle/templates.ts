@@ -13,8 +13,7 @@ const op20_build = ({
     tokenDecimals,
     tokenMaxSupply,
 }: OP20BuildConfig) => ({
-    [`contracts/${tokenName}.ts`]: `
-mport { u256 } from '@btc-vision/as-bignum/assembly';
+    [`contracts/${tokenName}.ts`]: `import { u256 } from '@btc-vision/as-bignum/assembly';
 import {
     Address,
     AddressMap,
