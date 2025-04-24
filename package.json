@@ -1,6 +1,6 @@
 {
   "name": "opnet-build",
-  "version": "1.2.27",
+  "version": "1.2.28",
   "description": "asc bundled with the opnet runtime and a virtual filesystem for building contracts in the browser",
   "main": "dist/runtime-bundle/index.js",
   "module": "dist/runtime-bundle/index.js",

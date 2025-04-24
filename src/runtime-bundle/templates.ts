@@ -26,7 +26,7 @@ import {
 } from '@btc-vision/btc-runtime/runtime';
 
 @final
-export class MyToken extends DeployableOP_20 {
+export class ${tokenName} extends DeployableOP_20 {
     public constructor() {
         super();
 
