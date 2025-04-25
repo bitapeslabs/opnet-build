@@ -96,5 +96,4 @@ const buildContractWasm = (
     });
 };
 
-export * as templates from './templates';
 export { buildContractWasm };

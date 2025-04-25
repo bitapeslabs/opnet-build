@@ -1,10 +1,9 @@
-import { buildContractWasm, templates } from '../runtime-bundle';
+import { buildContractWasm } from '../runtime-bundle';
 import asc from 'assemblyscript/dist/asc.js';
 
 type IParams = {
     type: 'ping' | 'payload';
-    templateName?: templates.templateName;
-    templateData?: any;
+    templateData?: { [key: string]: string };
 };
 
 onmessage = async function (params: MessageEvent<IParams>) {
@@ -13,16 +12,16 @@ onmessage = async function (params: MessageEvent<IParams>) {
     }
 
     if (params.data.type === 'payload') {
-        const { templateName, templateData } = params.data;
+        const { templateData } = params.data;
 
-        if (!templateName || !templateData) {
+        if (templateData) {
             return postMessage({ status: 'error', error: 'Invalid message structure.' });
         }
 
         try {
             postMessage({ status: 'loading' });
 
-            let binary = await buildContractWasm(templates[templateName](templateData), asc);
+            let binary = await buildContractWasm(templateData, asc);
 
             return postMessage({ status: 'success', binary });
         } catch (error) {
