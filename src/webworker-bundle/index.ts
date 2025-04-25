@@ -12,11 +12,11 @@ onmessage = async function (params: MessageEvent<IParams>) {
     }
 
     if (params.data.type === 'payload') {
-        const { templateData } = params.data;
-
-        if (templateData) {
+        if (!params.data?.templateData) {
             return postMessage({ status: 'error', error: 'Invalid message structure.' });
         }
+
+        const { templateData } = params.data;
 
         try {
             postMessage({ status: 'loading' });
