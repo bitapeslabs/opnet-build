@@ -3783,10 +3783,10 @@ opencollective-postinstall@2.0.3:
   resolved "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
   integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
 
-opnet-transform-web@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/opnet-transform-web/-/opnet-transform-web-0.0.8.tgz"
-  integrity sha512-mKd1IVQjnZZkKOiHEwBoL9QKIwlo14QpNc4sgFVGCbQCE8ktIKUDEOojfxg50k7KE/RLvSxEj8iozXoFFgXnpA==
+opnet-transform-web@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/opnet-transform-web/-/opnet-transform-web-0.0.9.tgz"
+  integrity sha512-nf24LVnm4wZ4J286WEC3L5eGG0DF+VaTaOLDiWU1VIRSPXPA94jjmnVMp3doaiLa9fsBzQhku0J9X6EqrUZgxw==
   dependencies:
     "@assemblyscript/loader" "^0.27.35"
     "@btc-vision/logger" "^1.0.6"
