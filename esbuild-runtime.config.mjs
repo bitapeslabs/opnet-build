@@ -8,6 +8,6 @@ await build({
     format: 'esm',
     platform: 'browser',
     target: ['es2022'],
-    plugins: [],
+    plugins: [emptyModulesPlugin(['module', 'fs', 'path'])],
     tsconfig: './tsconfig.json',
 });

@@ -1,5 +1,6 @@
 //import asc from 'assemblyscript/dist/asc.js';
 import runtime from './runtime';
+import transform from '@btc-vision/opnet-transform/build/OPNetTransformer';
 import { resolveDuplicatedPath } from './utils';
 const buildContractWasm = (
     includeFiles: {
@@ -34,8 +35,6 @@ const buildContractWasm = (
             '512',
             '--use',
             'abort=index/abort',
-            '--transform',
-            'node_modules/@btc-vision/opnet-transform/build/OPNetTransformer.js',
         ]; // Set maximum memory to 512 pages (32MB)
 
         const asConfig = JSON.stringify({
@@ -94,6 +93,7 @@ const buildContractWasm = (
             readFile,
             writeFile,
             listFiles,
+            transforms: [transform],
         });
 
         if (error || stderr) {
