@@ -26,7 +26,7 @@ const buildContractWasm = (
             '--exportStart',
             'start', // Export the start function
             '--use',
-            'abort=src/index/abort', // Use custom abort
+            'abort=index/abort', // Use custom abort
             '--disable',
             'mutable-globals,sign-extension,nontrapping-f2i,bulk-memory', // Disable specific WebAssembly features
         ];
