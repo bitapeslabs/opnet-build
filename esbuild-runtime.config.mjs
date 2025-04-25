@@ -1,5 +1,5 @@
 import { build } from 'esbuild';
-import { emptyModulesPlugin } from './scripts/esbuild-plugins/emptyModulesPlugin.js';
+import { polyfillNode } from 'esbuild-plugin-polyfill-node';
 
 await build({
     entryPoints: ['src/runtime-bundle/index.ts'],
@@ -8,6 +8,6 @@ await build({
     format: 'esm',
     platform: 'browser',
     target: ['es2022'],
-    plugins: [emptyModulesPlugin(['module', 'fs', 'path'])],
+    plugins: [polyfillNode({ polyfills: { fs: true, path: true, module: true } })],
     tsconfig: './tsconfig.json',
 });
