@@ -35,7 +35,7 @@ const buildContractWasm = (
             '--use',
             'abort=index/abort',
             '--transform',
-            'node_modules/@btc-vision/opnet-transform',
+            'node_modules/@btc-vision/opnet-transform/build/OPNetTransformer.js',
         ]; // Set maximum memory to 512 pages (32MB)
 
         const asConfig = JSON.stringify({
