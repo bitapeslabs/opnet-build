@@ -7,6 +7,10 @@
         {
             "path": "node_modules/@btc-vision/btc-runtime/runtime",
             "resolveTo": "node_modules/@btc-vision/btc-runtime/runtime"
+        },
+        {
+            "path": "node_modules/@btc-vision/opnet-transform",
+            "resolveTo": "node_modules/@btc-vision/opnet-transform"
         }
     ]
 }
