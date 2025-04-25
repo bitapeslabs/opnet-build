@@ -12,30 +12,24 @@ const buildContractWasm = (
         const asOptions = [
             '--target',
             'release', // Target release mode
-            '--measure', // Measure compilation
-            '-Ospeed', // Optimize for speed
-            '--noAssert', // Disable runtime assertions
             '--optimizeLevel',
             '3', // Set optimize level to 3
             '--shrinkLevel',
-            '2', // Set shrink level to 2
+            '0', // Set shrink level to 0
             '--converge', // Optimize code for convergence
-            '--disable',
-            'mutable-globals,sign-extension,nontrapping-f2i,bulk-memory', // Disable specific WebAssembly features
             '--runtime',
             'stub', // Use the 'stub' runtime
             '--memoryBase',
             '0', // Set memory base to 0
-            '--lowMemoryLimit', // Enable low memory limit mode
-            '--uncheckedBehavior',
-            'never', // Never allow unchecked behavior
             '--initialMemory',
             '1', // Set initial memory to 1 page (64KB)
-            '--maximumMemory',
-            '512',
+            '--exportStart',
+            'start', // Export the start function
             '--use',
-            'abort=index/abort',
-        ]; // Set maximum memory to 512 pages (32MB)
+            'abort=src/index/abort', // Use custom abort
+            '--disable',
+            'mutable-globals,sign-extension,nontrapping-f2i,bulk-memory', // Disable specific WebAssembly features
+        ];
 
         const asConfig = JSON.stringify({
             targets: {
