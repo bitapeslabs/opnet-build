@@ -1,6 +1,6 @@
 //import asc from 'assemblyscript/dist/asc.js';
 import runtime from './runtime';
-import transform from '@btc-vision/opnet-transform/build/OPNetTransformer';
+import WebTransformer from 'opnet-transform-web/build/OPNetWebTransformer.js';
 import { resolveDuplicatedPath } from './utils';
 const buildContractWasm = (
     includeFiles: {
@@ -93,7 +93,7 @@ const buildContractWasm = (
             readFile,
             writeFile,
             listFiles,
-            transforms: [transform],
+            transforms: [WebTransformer],
         });
 
         if (error || stderr) {
