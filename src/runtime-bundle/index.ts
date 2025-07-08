@@ -1,34 +1,43 @@
 //import asc from 'assemblyscript/dist/asc.js';
 import runtime from './runtime';
-import WebTransformer from 'opnet-transform-web/build/OPNetWebTransformer.js';
+import WebTransformer from '@btc-vision/opnet-transform/build/OPNetWebTransform.js';
 import { resolveDuplicatedPath } from './utils';
 const buildContractWasm = (
-    includeFiles: {
-        [key: string]: string;
-    },
+    includeFiles: { [key: string]: string },
     asc: any,
 ): Promise<Uint8Array> => {
     return new Promise(async (resolve, reject) => {
         const asOptions = [
+            /* build / output -------------------------------------------------------- */
             '--target',
-            'release', // Target release mode
+            'release', // build the “release” target
+            '--binaryFile',
+            'build.wasm', // equivalent to outFile
+            /* optimisation ---------------------------------------------------------- */
             '--optimizeLevel',
-            '3', // Set optimize level to 3
+            '3', // O3
             '--shrinkLevel',
-            '0', // Set shrink level to 0
-            '--converge', // Optimize code for convergence
+            '2', // S2  (was 0)
+            '--converge', // extra optimisation pass
+            '--noAssert', // strip runtime assertions
+            /* runtime / memory ------------------------------------------------------ */
             '--runtime',
-            'stub', // Use the 'stub' runtime
+            'stub', // minimal runtime
             '--memoryBase',
-            '0', // Set memory base to 0
+            '0',
             '--initialMemory',
-            '1', // Set initial memory to 1 page (64KB)
+            '1', // 1 × 64 KiB page
+            /* exports / bindings ---------------------------------------------------- */
             '--exportStart',
-            'start', // Export the start function
+            'start', // call start()
+            '--bindings',
+            'esm', // generate ES-module bindings
+            /* misc hooks ------------------------------------------------------------ */
             '--use',
-            'abort=index/abort', // Use custom abort
-            '--disable',
-            'mutable-globals,sign-extension,nontrapping-f2i,bulk-memory', // Disable specific WebAssembly features
+            'abort=src/index/abort', // custom abort (updated path)
+            /* WebAssembly feature flags --------------------------------------------- */
+            '--enable',
+            'sign-extension,mutable-globals,nontrapping-f2i,bulk-memory,simd,reference-types,multi-value',
         ];
 
         const asConfig = JSON.stringify({
@@ -42,9 +51,7 @@ const buildContractWasm = (
                     noAssert: true,
                 },
             },
-            options: {
-                bindings: 'esm',
-            },
+            options: { bindings: 'esm' },
         });
 
         const bundle = {

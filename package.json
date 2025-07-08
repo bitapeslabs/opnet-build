@@ -54,6 +54,7 @@
     "@babel/core": "^7.26.10",
     "@btc-vision/as-bignum": "^0.0.5",
     "@btc-vision/btc-runtime": "^1.8.1",
+    "@btc-vision/opnet-transform": "^0.1.6",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
