@@ -11,8 +11,6 @@ const buildContractWasm = (
             /* build / output -------------------------------------------------------- */
             '--target',
             'release', // build the “release” target
-            '--binaryFile',
-            'build.wasm', // equivalent to outFile
             /* optimisation ---------------------------------------------------------- */
             '--optimizeLevel',
             '3', // O3
