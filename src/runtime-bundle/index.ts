@@ -32,7 +32,7 @@ const buildContractWasm = (
             'esm', // generate ES-module bindings
             /* misc hooks ------------------------------------------------------------ */
             '--use',
-            'abort=src/index/abort', // custom abort (updated path)
+            'abort=index/abort', // custom abort (updated path)
             /* WebAssembly feature flags --------------------------------------------- */
             '--enable',
             'sign-extension,mutable-globals,nontrapping-f2i,bulk-memory,simd,reference-types,multi-value',
