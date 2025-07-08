@@ -52,7 +52,7 @@
   "dependencies": {
     "@assemblyscript/loader": "^0.27.29",
     "@babel/core": "^7.26.10",
-    "@btc-vision/btc-runtime": "^1.5.8",
+    "@btc-vision/btc-runtime": "^1.8.1",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
