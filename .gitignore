@@ -152,3 +152,8 @@ tests/
 
 .prettierrc.json
 .gitattributes
+
+.yalc/
+.yalc/*
+.yalc
+yalc.lock
